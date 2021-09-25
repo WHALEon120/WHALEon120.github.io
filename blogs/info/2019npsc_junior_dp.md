@@ -1,6 +1,7 @@
 # F. bb 與序列(npsc國中組 2019初賽) 
 ## 題目敘述  
 [點我](https://www.google.com/url?sa=t&source=web&rct=j&url=https://contest.cc.ntu.edu.tw/npsc2019/teamclient/semi_junior.pdf&ved=2ahUKEwj18_zAq5rzAhVUIaYKHULZC9AQFnoECAkQAQ&usg=AOvVaw2jRs7Shi0hxxFPgC-b4T7u)
+(最後一題)
 ## 觀念  
 分色動態規劃，用三個陣列處存最後使用某顏色之最大值
 ## 動態規劃  
