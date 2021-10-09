@@ -1,5 +1,5 @@
 # 尉崴是電神  
-![image] (WHALEon120.github.io/inprivate/Wayne Wei/20191129_190252 (1).jpg)    
+![image] (https://whaleon120.github.io/242350753_186729770198712_6334052257088966507_n.jpg)    
  尉崴是電神  
  尉崴是電神  
  尉崴是電神  
