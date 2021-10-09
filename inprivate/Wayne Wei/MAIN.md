@@ -1,5 +1,5 @@
 # 尉崴是電神  
-![image](https://whaleon120.github.io/242350753_186729770198712_6334052257088966507_n.jpg)    
+![image](WHALEon120.github.io/inprivate/20191129_190252.jpg)    
  尉崴是電神  
  尉崴是電神  
  尉崴是電神  
