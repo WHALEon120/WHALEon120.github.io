@@ -1,4 +1,5 @@
 # 自製C++ CHATBOT  
+[回前夜](https://whaleon120.github.io/blogs/invent/main)   
 ### SOURCE CODE  
 ``` cpp
 #include<bits/stdc++.h>
