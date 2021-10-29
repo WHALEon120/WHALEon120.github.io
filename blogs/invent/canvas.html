@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>CANVAS.JS 動態背景 | WHALEon120.github.io</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="CANVAS.JS 動態背景" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://whaleon120.github.io/blogs/invent/canvas.html" />
+<meta property="og:url" content="https://whaleon120.github.io/blogs/invent/canvas.html" />
+<meta property="og:site_name" content="WHALEon120.github.io" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CANVAS.JS 動態背景" />
+<script type="application/ld+json">
+{"url":"https://whaleon120.github.io/blogs/invent/canvas.html","@type":"WebPage","headline":"CANVAS.JS 動態背景","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=09651b8f9174d44fc15e3dc4290885833cf39cab">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://whaleon120.github.io/">WHALEon120.github.io</a></h1>
+      
+
+      <h1 id="canvasjs-動態背景">CANVAS.JS 動態背景</h1>
+<p>就跟這網頁一樣的動態背景<br />
+(手機可能看不到喔!)</p>
+<h3 id="source-code">SOURCE CODE</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">get_attribute</span><span class="p">(</span><span class="nx">node</span><span class="p">,</span> <span class="nx">attr</span><span class="p">,</span> <span class="nx">default_value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">node</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="nx">attr</span><span class="p">)</span> <span class="o">||</span> <span class="nx">default_value</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">get_by_tagname</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">get_config</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">scripts</span> <span class="o">=</span> <span class="nx">get_by_tagname</span><span class="p">(</span><span class="dl">"</span><span class="s2">script</span><span class="dl">"</span><span class="p">),</span>
+            <span class="nx">script_len</span> <span class="o">=</span> <span class="nx">scripts</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+            <span class="nx">script</span> <span class="o">=</span> <span class="nx">scripts</span><span class="p">[</span><span class="nx">script_len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span> <span class="c1">// current loading script</span>
+        <span class="c1">// console.log(script);</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="na">l</span><span class="p">:</span> <span class="nx">script_len</span><span class="p">,</span> <span class="c1">// for canvas id</span>
+            <span class="na">z</span><span class="p">:</span> <span class="nx">get_attribute</span><span class="p">(</span><span class="nx">script</span><span class="p">,</span> <span class="dl">"</span><span class="s2">zIndex</span><span class="dl">"</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+            <span class="na">o</span><span class="p">:</span> <span class="nx">get_attribute</span><span class="p">(</span><span class="nx">script</span><span class="p">,</span> <span class="dl">"</span><span class="s2">opacity</span><span class="dl">"</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+            <span class="na">c</span><span class="p">:</span> <span class="nx">get_attribute</span><span class="p">(</span><span class="nx">script</span><span class="p">,</span> <span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">0,0,0</span><span class="dl">"</span><span class="p">),</span>
+            <span class="na">n</span><span class="p">:</span> <span class="nx">get_attribute</span><span class="p">(</span><span class="nx">script</span><span class="p">,</span> <span class="dl">"</span><span class="s2">count</span><span class="dl">"</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">set_canvas_size</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">clientWidth</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">clientWidth</span><span class="p">,</span> 
+        <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">clientHeight</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">clientHeight</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">let</span> <span class="nx">frame_func</span> <span class="o">=</span> <span class="nx">func</span> <span class="o">=&gt;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="mi">1000</span> <span class="o">/</span> <span class="mi">30</span><span class="p">);</span>
+    <span class="c1">// window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame</span>
+    <span class="c1">//    || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(func) { window.setTimeout(func, 1000 / 45); };</span>
+    <span class="kd">let</span> <span class="nx">random</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">mouse_position</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">x</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="na">y</span><span class="p">:</span> <span class="kc">null</span>
+    <span class="p">};</span>
+
+    <span class="kd">let</span> <span class="nx">config</span> <span class="o">=</span> <span class="nx">get_config</span><span class="p">();</span>
+    <span class="c1">// console.log(config);</span>
+    <span class="kd">let</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">"</span><span class="s2">canvas</span><span class="dl">"</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">int</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">abs</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">;</span>
+    <span class="nx">canvas</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s2">`canvas-nest-</span><span class="p">${</span><span class="nx">config</span><span class="p">.</span><span class="nx">l</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+    <span class="nx">canvas</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">cssText</span> <span class="o">=</span> <span class="s2">`position:fixed;top:0;left:0;z-index:</span><span class="p">${</span><span class="nx">config</span><span class="p">.</span><span class="nx">z</span><span class="p">}</span><span class="s2">;opacity:</span><span class="p">${</span><span class="nx">config</span><span class="p">.</span><span class="nx">o</span><span class="p">}</span><span class="s2">`</span>
+    <span class="nx">get_by_tagname</span><span class="p">(</span><span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">canvas</span><span class="p">);</span>
+
+    <span class="nx">set_canvas_size</span><span class="p">();</span>
+
+    <span class="kd">let</span> <span class="nx">points</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="kd">let</span> <span class="nx">lines</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">config</span><span class="p">.</span><span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span>
+            <span class="nx">y</span> <span class="o">=</span> <span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">,</span>
+            <span class="nx">theta</span> <span class="o">=</span> <span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nx">vx</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">theta</span><span class="p">),</span>
+            <span class="nx">vy</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">theta</span><span class="p">);</span>
+        <span class="nx">points</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+            <span class="na">x</span><span class="p">:</span> <span class="nx">x</span><span class="p">,</span>
+            <span class="na">y</span><span class="p">:</span> <span class="nx">y</span><span class="p">,</span>
+            <span class="na">vx</span><span class="p">:</span> <span class="nx">vx</span><span class="p">,</span>
+            <span class="na">vy</span><span class="p">:</span> <span class="nx">vy</span><span class="p">,</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="dl">"</span><span class="s2">2d</span><span class="dl">"</span><span class="p">);</span>
+
+    <span class="nb">window</span><span class="p">.</span><span class="nx">onresize</span> <span class="o">=</span> <span class="nx">set_canvas_size</span><span class="p">;</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">onmousemove</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">e</span> <span class="o">=</span> <span class="nx">e</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">event</span><span class="p">,</span> <span class="nx">mouse_position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">clientX</span><span class="p">,</span> <span class="nx">mouse_position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">e</span><span class="p">.</span><span class="nx">clientY</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">onmouseout</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">mouse_position</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">mouse_position</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="kd">function</span> <span class="nx">get_dist</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="nx">A</span><span class="p">.</span><span class="nx">x</span><span class="o">-</span><span class="nx">B</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nx">A</span><span class="p">.</span><span class="nx">x</span><span class="o">-</span><span class="nx">B</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">A</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="nx">B</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nx">A</span><span class="p">.</span><span class="nx">y</span><span class="o">-</span><span class="nx">B</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">draw_lines</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">points</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span> <span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">A</span><span class="p">.</span><span class="nx">x</span> <span class="o">!=</span> <span class="nx">B</span><span class="p">.</span><span class="nx">x</span> <span class="p">?</span> <span class="nx">A</span><span class="p">.</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">B</span><span class="p">.</span><span class="nx">x</span> <span class="p">:</span> <span class="nx">A</span><span class="p">.</span><span class="nx">y</span> <span class="o">-</span> <span class="nx">B</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+        <span class="p">});</span>
+        <span class="kd">let</span> <span class="nx">res</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">32</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">w</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">w</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">;</span> <span class="nx">w</span><span class="o">++</span><span class="p">)</span> <span class="nx">res</span><span class="p">[</span><span class="nx">w</span><span class="p">]</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">config</span><span class="p">.</span><span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">let</span> <span class="nx">A</span> <span class="o">=</span> <span class="nx">points</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span> <span class="nx">B</span> <span class="o">=</span> <span class="nx">points</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+                <span class="kd">let</span> <span class="nx">dist</span> <span class="o">=</span> <span class="nx">get_dist</span><span class="p">(</span><span class="nx">A</span><span class="p">,</span> <span class="nx">B</span><span class="p">),</span> <span class="nx">d</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="nx">dist</span> <span class="o">/</span> <span class="mi">6000</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">d</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">res</span><span class="p">[</span><span class="nx">int</span><span class="p">(</span><span class="nx">d</span> <span class="o">*</span> <span class="mi">32</span><span class="p">)].</span><span class="nx">push</span><span class="p">({</span>
+                        <span class="na">u</span><span class="p">:</span> <span class="nx">A</span><span class="p">,</span>
+                        <span class="na">v</span><span class="p">:</span> <span class="nx">B</span>
+                    <span class="p">});</span>
+                    <span class="nx">cnt</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="k">if</span><span class="p">(</span><span class="nx">A</span><span class="p">.</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">B</span><span class="p">.</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="mi">80</span> <span class="o">||</span> <span class="nx">cnt</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="nx">points</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">dist</span> <span class="o">=</span> <span class="nx">get_dist</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">mouse_position</span><span class="p">),</span> <span class="nx">d</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="nx">dist</span> <span class="o">/</span> <span class="mi">20000</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">d</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">res</span><span class="p">[</span><span class="nx">int</span><span class="p">(</span><span class="nx">d</span> <span class="o">*</span> <span class="mi">32</span><span class="p">)].</span><span class="nx">push</span><span class="p">({</span>
+                    <span class="na">u</span><span class="p">:</span> <span class="nx">p</span><span class="p">,</span>
+                    <span class="na">v</span><span class="p">:</span> <span class="nx">mouse_position</span>
+                <span class="p">});</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+        <span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">w</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">w</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">;</span> <span class="nx">w</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">context</span><span class="p">.</span><span class="nx">lineWidth</span> <span class="o">=</span> <span class="nx">w</span> <span class="o">/</span> <span class="mi">32</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="nx">context</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">rgba(</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">config</span><span class="p">.</span><span class="nx">c</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">,</span><span class="dl">"</span> <span class="o">+</span> <span class="p">(</span><span class="nx">w</span> <span class="o">/</span> <span class="mi">32</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">)</span><span class="dl">"</span><span class="p">;</span>
+            <span class="nx">context</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
+            <span class="nx">res</span><span class="p">[</span><span class="nx">w</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">draw_line</span><span class="p">);</span>
+            <span class="nx">context</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">res</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">function</span> <span class="nx">draw_line</span><span class="p">(</span><span class="nx">line</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">context</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="nx">int</span><span class="p">(</span><span class="nx">line</span><span class="p">.</span><span class="nx">u</span><span class="p">.</span><span class="nx">x</span><span class="p">),</span> <span class="nx">int</span><span class="p">(</span><span class="nx">line</span><span class="p">.</span><span class="nx">u</span><span class="p">.</span><span class="nx">y</span><span class="p">));</span>
+        <span class="nx">context</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">int</span><span class="p">(</span><span class="nx">line</span><span class="p">.</span><span class="nx">v</span><span class="p">.</span><span class="nx">x</span><span class="p">),</span> <span class="nx">int</span><span class="p">(</span><span class="nx">line</span><span class="p">.</span><span class="nx">v</span><span class="p">.</span><span class="nx">y</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">redraw</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">context</span><span class="p">.</span><span class="nx">clearRect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">&lt;</span> <span class="mi">480</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">frame_func</span><span class="p">(</span><span class="nx">redraw</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nx">points</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">mouse_position</span><span class="p">.</span><span class="nx">x</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">mouse_position</span><span class="p">.</span><span class="nx">y</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">let</span> <span class="nx">dist</span> <span class="o">=</span> <span class="nx">get_dist</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">mouse_position</span><span class="p">);</span>
+                <span class="k">if</span><span class="p">(</span><span class="mi">10500</span> <span class="o">&lt;=</span> <span class="nx">dist</span> <span class="o">&amp;&amp;</span> <span class="nx">dist</span> <span class="o">&lt;</span> <span class="mi">20000</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">p</span><span class="p">.</span><span class="nx">x</span> <span class="o">+=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">vx</span><span class="p">;</span> 
+                    <span class="nx">p</span><span class="p">.</span><span class="nx">y</span> <span class="o">+=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">vy</span><span class="p">;</span>
+                    <span class="nx">p</span><span class="p">.</span><span class="nx">x</span> <span class="o">-=</span> <span class="mf">0.03</span> <span class="o">*</span> <span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">mouse_position</span><span class="p">.</span><span class="nx">x</span><span class="p">);</span>
+                    <span class="nx">p</span><span class="p">.</span><span class="nx">y</span> <span class="o">-=</span> <span class="mf">0.03</span> <span class="o">*</span> <span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">y</span> <span class="o">-</span> <span class="nx">mouse_position</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="mi">10000</span> <span class="o">&lt;=</span> <span class="nx">dist</span> <span class="o">&amp;&amp;</span> <span class="nx">dist</span> <span class="o">&lt;</span> <span class="mi">10500</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="c1">// captured</span>
+                    <span class="kd">let</span> <span class="nx">now</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">atan2</span><span class="p">(</span><span class="nx">p</span><span class="p">.</span><span class="nx">y</span> <span class="o">-</span> <span class="nx">mouse_position</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">p</span><span class="p">.</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">mouse_position</span><span class="p">.</span><span class="nx">x</span><span class="p">);</span>
+                    <span class="nx">now</span> <span class="o">=</span> <span class="nx">now</span> <span class="o">+</span> <span class="mf">0.01</span><span class="p">;</span>
+                    <span class="nx">p</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">mouse_position</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">dist</span><span class="p">)</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">now</span><span class="p">);</span>
+                    <span class="nx">p</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="nx">mouse_position</span><span class="p">.</span><span class="nx">y</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">dist</span><span class="p">)</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">now</span><span class="p">);</span>
+                    <span class="kd">let</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+                    <span class="nx">p</span><span class="p">.</span><span class="nx">vx</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">t</span><span class="p">);</span>
+                    <span class="nx">p</span><span class="p">.</span><span class="nx">vy</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">t</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nx">p</span><span class="p">.</span><span class="nx">x</span> <span class="o">+=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">vx</span><span class="p">;</span>
+                    <span class="nx">p</span><span class="p">.</span><span class="nx">y</span> <span class="o">+=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">vy</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">p</span><span class="p">.</span><span class="nx">x</span> <span class="o">+=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">vx</span><span class="p">;</span> 
+                <span class="nx">p</span><span class="p">.</span><span class="nx">y</span> <span class="o">+=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">vy</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="c1">// const eps = 0.03;</span>
+            <span class="c1">// if (abs(p.x - x) &gt; eps || abs(p.y - y) &gt; eps) {</span>
+            <span class="c1">//     p.x = x;</span>
+            <span class="c1">//     p.y = y;</span>
+            <span class="c1">// }</span>
+            <span class="nx">p</span><span class="p">.</span><span class="nx">vx</span> <span class="o">*=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">x</span> <span class="o">&gt;</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">||</span> <span class="nx">p</span><span class="p">.</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="o">-</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="nx">p</span><span class="p">.</span><span class="nx">vy</span> <span class="o">*=</span> <span class="nx">p</span><span class="p">.</span><span class="nx">y</span> <span class="o">&gt;</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">||</span> <span class="nx">p</span><span class="p">.</span><span class="nx">y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="o">-</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">});</span>
+        <span class="nx">draw_lines</span><span class="p">();</span>
+        <span class="nx">frame_func</span><span class="p">(</span><span class="nx">redraw</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">frame_func</span><span class="p">(</span><span class="nx">redraw</span><span class="p">);</span>
+    <span class="c1">// setTimeout(function() {</span>
+    <span class="c1">//     redraw();</span>
+    <span class="c1">// }, 100);</span>
+<span class="p">}();</span>
+</code></pre></div></div>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+  <script>
+  ! function() {
+    function get_attribute(node, attr, default_value) {
+        return node.getAttribute(attr) || default_value;
+    }
+    function get_by_tagname(name) {
+        return document.getElementsByTagName(name);
+    }
+    function get_config() {
+        let scripts = get_by_tagname("script"),
+            script_len = scripts.length,
+            script = scripts[script_len - 1]; // current loading script
+        // console.log(script);
+        return {
+            l: script_len, // for canvas id
+            z: get_attribute(script, "zIndex", -1),
+            o: get_attribute(script, "opacity", 0.5),
+            c: get_attribute(script, "color", "0,0,0"),
+            n: get_attribute(script, "count", 99)
+        };
+    }
+    function set_canvas_size() {
+        canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, 
+        canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    }
+
+    let frame_func = func => window.setTimeout(func, 1000 / 30);
+    // window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame
+    //    || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(func) { window.setTimeout(func, 1000 / 45); };
+    let random = Math.random;
+    let mouse_position = {
+        x: null,
+        y: null
+    };
+
+    let config = get_config();
+    // console.log(config);
+    let canvas = document.createElement("canvas");
+    let int = Math.floor;
+    let abs = Math.abs;
+    canvas.id = `canvas-nest-${config.l}`;
+    canvas.style.cssText = `position:fixed;top:0;left:0;z-index:${config.z};opacity:${config.o}`
+    get_by_tagname("body")[0].appendChild(canvas);
+
+    set_canvas_size();
+
+    let points = [];
+    let lines = [];
+    for (let i = 0; i < config.n; i++) {
+        let x = random() * canvas.width,
+            y = random() * canvas.height,
+            theta = random() * Math.PI * 2,
+            vx = 1.5 * Math.cos(theta),
+            vy = 1.5 * Math.sin(theta);
+        points.push({
+            x: x,
+            y: y,
+            vx: vx,
+            vy: vy,
+        });
+    }
+    let context = canvas.getContext("2d");
+
+    window.onresize = set_canvas_size;
+    window.onmousemove = function(e) {
+        e = e || window.event, mouse_position.x = e.clientX, mouse_position.y = e.clientY;
+    };
+    window.onmouseout = function() {
+        mouse_position.x = null, mouse_position.y = null;
+    };
+    function get_dist(A, B) { return (A.x-B.x) * (A.x-B.x) + (A.y-B.y) * (A.y-B.y); }
+    function draw_lines() {
+        points.sort(function(A, B) {
+            return A.x != B.x ? A.x - B.x : A.y - B.y;
+        });
+        let res = Array(32);
+        for(let w = 0; w < 32; w++) res[w] = [];
+        for(let i = 0; i < config.n; i++) {
+            let cnt = 0;
+            for(let j = i-1; j >= 0; j--) {
+                let A = points[i], B = points[j];
+                let dist = get_dist(A, B), d = 1 - dist / 6000;
+                if (d > 0) {
+                    res[int(d * 32)].push({
+                        u: A,
+                        v: B
+                    });
+                    cnt += 1;
+                }
+                if(A.x - B.x > 80 || cnt > 5) break;
+            }
+        }
+        points.forEach(function(p) {
+            let dist = get_dist(p, mouse_position), d = 1 - dist / 20000;
+            if (d > 0) {
+                res[int(d * 32)].push({
+                    u: p,
+                    v: mouse_position
+                });
+            }
+        });
+        for(let w = 0; w < 32; w++) {
+            context.lineWidth = w / 32 * 2;
+            context.strokeStyle = "rgba(" + config.c + "," + (w / 32 + 0.2) + ")";
+            context.beginPath();
+            res[w].forEach(draw_line);
+            context.stroke();
+        }
+        return res;
+    }
+    function draw_line(line) {
+        context.moveTo(int(line.u.x), int(line.u.y));
+        context.lineTo(int(line.v.x), int(line.v.y));
+    }
+
+    function redraw() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        if (canvas.width < 480) {
+            return frame_func(redraw);
+        }
+        points.forEach(function(p) {
+            if (mouse_position.x != null && mouse_position.y != null) {
+                let dist = get_dist(p, mouse_position);
+                if(10500 <= dist && dist < 20000) {
+                    p.x += p.vx; 
+                    p.y += p.vy;
+                    p.x -= 0.03 * (p.x - mouse_position.x);
+                    p.y -= 0.03 * (p.y - mouse_position.y);
+                } else if(10000 <= dist && dist < 10500) {
+                    // captured
+                    let now = Math.atan2(p.y - mouse_position.y, p.x - mouse_position.x);
+                    now = now + 0.01;
+                    p.x = mouse_position.x + Math.sqrt(dist) * Math.cos(now);
+                    p.y = mouse_position.y + Math.sqrt(dist) * Math.sin(now);
+                    let t = random() * Math.PI * 2;
+                    p.vx = Math.cos(t);
+                    p.vy = Math.sin(t);
+                } else {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                }
+            } else {
+                p.x += p.vx; 
+                p.y += p.vy;
+            }
+            // const eps = 0.03;
+            // if (abs(p.x - x) > eps || abs(p.y - y) > eps) {
+            //     p.x = x;
+            //     p.y = y;
+            // }
+            p.vx *= p.x > canvas.width || p.x < 0 ? -1 : 1;
+            p.vy *= p.y > canvas.height || p.y < 0 ? -1 : 1;
+        });
+        draw_lines();
+        frame_func(redraw);
+    }
+
+    frame_func(redraw);
+    // setTimeout(function() {
+    //     redraw();
+    // }, 100);
+}();
+  </script>
+</html>
