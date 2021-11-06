@@ -1,5 +1,6 @@
 # vbs 上課整老師之整理
-template:
+[回前頁](https://whaleon120.github.io/blogs/invent/main)   
+template:(一定要先敲)
 ``` vbs
 set ws = CreateObject("WScript.Shell")
 ``` 
@@ -52,4 +53,5 @@ end if
 一整人經驗來看for就是讓東西一直關不掉  
 sendkeys就是讓ptt自己跳  
 run就是突然跑東西出來  
-恩，大概就這樣
+恩，大概就這樣  
+(我以後要不要開整人日常啊...?
