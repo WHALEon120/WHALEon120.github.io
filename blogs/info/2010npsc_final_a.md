@@ -42,3 +42,6 @@ do{
 return 0;  
 }  
 ```
+## 解後小記
+啊!!!  
+Green Judge不能用 <bits/stdc++.h> 函式庫要自己查，好煩
