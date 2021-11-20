@@ -1,4 +1,5 @@
 # 2021 NPSC國中組網路賽 G. 三⾓撞球
+[回前頁](https://whaleon120.github.io/blogs/info/main)  
 ## 題目敘述
 [點我](https://whaleon120.github.io/contest%20(1).pdf)
 ## 想法
