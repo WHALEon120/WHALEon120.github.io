@@ -9,3 +9,6 @@
 [5.NPSC 2010 國中組決賽 G.失落的維京戰機](https://whaleon120.github.io/blogs/info/2010_npsc_junior_final_g.html)  
 [6.NPSC 2010 國中組初賽 A.回文](https://whaleon120.github.io/blogs/info/2020_npsc_first_a_junior.html)  
 [7.NPSC 2010 國中組決賽 B.好吃的麵包](https://whaleon120.github.io/blogs/info/2010_npsc_junior_first_b.html)  
+[8.2021 NPSC國中組網路賽A. 圈圈叉叉](https://whaleon120.github.io/blogs/info/2021_junior_a)  
+[9.2021 NPSC國中組網路賽 F. ⼀個遊戲](https://whaleon120.github.io/blogs/info/2021_junior_npsc_f)  
+[10.2021 NPSC國中組網路賽 G. 三⾓撞球](https://whaleon120.github.io/blogs/info/2021__npsc_junior_g)    
