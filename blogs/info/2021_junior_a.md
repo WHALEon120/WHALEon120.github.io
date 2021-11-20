@@ -1,4 +1,4 @@
-# 2021 網路賽A. 圈圈叉叉
+# 2021 NPSC國中組網路賽A. 圈圈叉叉
 ## 題目敘述
 [點我](https://whaleon120.github.io/contest%20(1).pdf)
 ## 想法
