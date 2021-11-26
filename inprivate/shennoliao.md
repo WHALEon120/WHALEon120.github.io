@@ -4,5 +4,7 @@
 一個IQ180(~體重也是~)的人  
 ### 歷程  
 實驗中學資優班最強的人  
+### 聯絡方式  
+歡迎加我  
 [facebook](https://www.facebook.com/shaenno.liao.1)  
 
