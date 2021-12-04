@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>Rich Text Editor</title>
+<title>將文字直接轉成html</title>
 <script type="text/javascript">
 var oDoc, sDefTxt;
 
@@ -76,6 +76,8 @@ img.intLink { border: 0; }
 </style>
 </head>
 <body onload="initDoc();">
+ <h3>輸入文字，埋好連結與處理好格式後點選SHOW HTML即可複製原始碼生成簡易html網頁</h3>
+  <h6>Powered By <a href="whaleon120.github.io">WH_ALE工作室</a></h6>
 <form name="compForm" method="post" action="sample.php" onsubmit="if(validateMode()){this.myDoc.value=oDoc.innerHTML;return true;}return false;">
 <input type="hidden" name="myDoc">
 <div id="toolBar1">
