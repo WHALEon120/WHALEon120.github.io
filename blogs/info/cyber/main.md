@@ -1,4 +1,7 @@
 # HACK SPACE  
+
+
+[回前頁](https://whaleon120.github.io/blogs/blog.html)  
 丟一些資安基礎區的地方，應為我也很弱而且主力不是這裡  
 就點到為止
 ## SOURCE
