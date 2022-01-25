@@ -1,7 +1,7 @@
 # 資訊的解
 
 [回前頁](https://whaleon120.github.io/blogs/blog.html)   
-[TOIJ 1009 .In No Time!(95年建中校內模擬)](https://whaleon120.github.io/blogs/info/toij1009)  
+[TOIJ 1009 .In No Time!(95年建中校內模擬賽)](https://whaleon120.github.io/blogs/info/toij1009)  
 [TOIJ 1003 .切義大利餅問題(95年建中校內初選)](https://whaleon120.github.io/blogs/info/toij1003)  
 [2021 NPSC國中組網路賽A. 圈圈叉叉](https://whaleon120.github.io/blogs/info/2021_junior_a)  
 [2021 NPSC國中組網路賽 F. ⼀個遊戲](https://whaleon120.github.io/blogs/info/2021_junior_npsc_f)  
