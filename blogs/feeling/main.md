@@ -1,3 +1,5 @@
+<link rel="shortcut icon" href="https://whaleon120.github.io/blogs/image/albe8-uoedw-001.ico"> 
+
 # 鯨魚日常小記(廢文專區)  
 [回前頁](https://whaleon120.github.io/blogs/blog.html)   
 [2022/01/25:貼文🖥️](https://whaleon120.github.io/blogs/feeling/20220125)  
