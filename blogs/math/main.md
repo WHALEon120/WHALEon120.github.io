@@ -1,3 +1,5 @@
+<link rel="shortcut icon" href="https://whaleon120.github.io/blogs/image/albe8-uoedw-001.ico"> 
+
 # 數學的解  
 [回前頁](https://whaleon120.github.io/blogs/blog.html)  
 
