@@ -1,3 +1,5 @@
+<link rel="shortcut icon" href="https://whaleon120.github.io/blogs/image/albe8-uoedw-001.ico"> 
+
 # 一些小發明  
 [回前頁](https://whaleon120.github.io/blogs/blog.html)   
 [1.C++自製CHATBOT](https://whaleon120.github.io/blogs/invent/chatbot01)  
