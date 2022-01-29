@@ -3,10 +3,10 @@
 # 資訊的解
 
 [回前頁](https://whaleon120.github.io/blogs/blog.html)   
-[TOIJ  1015 . A.Squares in Rectangle](https://whaleon120.github.io/blogs/info/toij1015)        
-[TOIJ 1010 . Prefix and Postfix(95年建中校內模擬賽)](https://whaleon120.github.io/blogs/info/toij1010)    
-[TOIJ 1009 .In No Time!(95年建中校內模擬賽)](https://whaleon120.github.io/blogs/info/toij1009)  
-[TOIJ 1003 .切義大利餅問題(95年建中校內初選)](https://whaleon120.github.io/blogs/info/toij1003)  
+[TIOJ  1015 . A.Squares in Rectangle](https://whaleon120.github.io/blogs/info/toij1015)        
+[TIOJ 1010 . Prefix and Postfix(95年建中校內模擬賽)](https://whaleon120.github.io/blogs/info/toij1010)    
+[TIOJ 1009 .In No Time!(95年建中校內模擬賽)](https://whaleon120.github.io/blogs/info/toij1009)  
+[TIOJ 1003 .切義大利餅問題(95年建中校內初選)](https://whaleon120.github.io/blogs/info/toij1003)  
 [2021 NPSC國中組網路賽A. 圈圈叉叉](https://whaleon120.github.io/blogs/info/2021_junior_a)  
 [2021 NPSC國中組網路賽 F. ⼀個遊戲](https://whaleon120.github.io/blogs/info/2021_junior_npsc_f)  
 [2021 NPSC國中組網路賽 G. 三⾓撞球](https://whaleon120.github.io/blogs/info/2021__npsc_junior_g)    
@@ -16,4 +16,4 @@
 [NPSC 2010 國中組初賽 A.回文](https://whaleon120.github.io/blogs/info/2020_npsc_first_a_junior.html)  
 [NPSC 2010 國中組決賽 B.好吃的麵包](https://whaleon120.github.io/blogs/info/2010_npsc_junior_first_b.html)  
 [bb 與序列(npsc國中組 2019初賽)(分色DP)](https://whaleon120.github.io/blogs/info/2019npsc_junior_dp)  
-[TOIJ 1005 圓周率問題 (95年建中校內初選)](https://whaleon120.github.io/blogs/info/toij1005 )  
+[TIOJ 1005 圓周率問題 (95年建中校內初選)](https://whaleon120.github.io/blogs/info/toij1005 )  
