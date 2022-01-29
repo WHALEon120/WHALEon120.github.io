@@ -3,6 +3,7 @@
 # 資訊的解
 
 [回前頁](https://whaleon120.github.io/blogs/blog.html)   
+[TOIJ  1015 . A.Squares in Rectangle](https://whaleon120.github.io/blogs/info/toij1015)        
 [TOIJ 1010 . Prefix and Postfix(95年建中校內模擬賽)](https://whaleon120.github.io/blogs/info/toij1010)    
 [TOIJ 1009 .In No Time!(95年建中校內模擬賽)](https://whaleon120.github.io/blogs/info/toij1009)  
 [TOIJ 1003 .切義大利餅問題(95年建中校內初選)](https://whaleon120.github.io/blogs/info/toij1003)  
