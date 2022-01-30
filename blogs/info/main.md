@@ -4,6 +4,8 @@
 
 [回前頁](https://whaleon120.github.io/blogs/blog.html)    
 
+
+[TIOJ  1043 . F.名偵探蚵男(NPSC高中組2003初賽 F)](https://whaleon120.github.io/blogs/info/tioj1043)     
 [TIOJ 1547 . 肺噬數列(建國中學105學年度校隊選拔prob 2)](https://whaleon120.github.io/blogs/info/tioj1547)     
 [TIOJ 1058 . [入門]難度5.兩個數字](https://whaleon120.github.io/blogs/info/tioj1058)     
 [TIOJ 1029 . A遊戲(96年建中校內模擬賽)](https://whaleon120.github.io/blogs/info/tioj1029)     
