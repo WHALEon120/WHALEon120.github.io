@@ -3,6 +3,8 @@
 # 資訊的解
 
 [回前頁](https://whaleon120.github.io/blogs/blog.html)    
+
+[TIOJ 1029 . A遊戲(96年建中校內模擬賽)](https://whaleon120.github.io/blogs/info/tioj1029)     
 [TIOJ 1011 . Edit Distance In Numbers(95年建中校內模擬賽)](https://whaleon120.github.io/blogs/info/tioj1011)     
 [TIOJ  1015 . A.Squares in Rectangle](https://whaleon120.github.io/blogs/info/toij1015)        
 [TIOJ 1010 . Prefix and Postfix(95年建中校內模擬賽)](https://whaleon120.github.io/blogs/info/toij1010)    
