@@ -2,7 +2,7 @@
 
 # 鯨魚日常小記(廢文專區)  
 [回前頁](https://whaleon120.github.io/blogs/blog.html)   
-[2022/01/31:除夕夜](WHALEon120.github.io/blogs/feeling/20220131)   
+[2022/01/31:除夕夜](https://WHALEon120.github.io/blogs/feeling/20220131)   
 [2022/01/25:貼文🖥️](https://whaleon120.github.io/blogs/feeling/20220125)  
 [2022/01/06:我生日!!!🥳🥳🥳](https://whaleon120.github.io/blogs/feeling/20220120)  
 [2022/01/16:段考前夕](https://WHALEon120.github.io/blogs/feeling/20220116)  
