@@ -201,11 +201,25 @@
 }();
  </script>
   <div id="vcomments"></div>
-    <script>
-        new Valine({
-            el: '#vcomments',
-            appId: '8dwWMRwGoIo1hw10xjgoQzQF-MdYXbMMI',
-            appKey: 'VweDFQIquYtiD0tAGqpjiVI1'
-        })
-    </script>
+     <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: false,
+        appId: '8dwWMRwGoIo1hw10xjgoQzQF-MdYXbMMI',
+        appKey: 'VweDFQIquYtiD0tAGqpjiVI1',
+        placeholder: '輸入',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
  </body></html>
