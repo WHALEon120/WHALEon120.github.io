@@ -1,4 +1,5 @@
 # 貪心法則  
+[回前頁](https://whaleon120.github.io/blogs/note/info/main)
 ## 原理  
 保證在每次選擇極端值進行運算後，能得到最佳解。  
 優點為複雜度低，程式碼簡單  
