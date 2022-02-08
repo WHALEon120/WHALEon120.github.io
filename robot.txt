@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:whaleon120.github.io
+Disallow:whaleon120.github.io/blogs/blog.html
+Disallow:whaleon120.github.io/blogs/info/main
+Disallow:whaleon120.github.io/blogs/feeling/main
